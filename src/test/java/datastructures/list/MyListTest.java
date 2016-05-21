@@ -27,7 +27,6 @@ public class MyListTest {
         assertTrue(4 == list.get(4));
         assertTrue(2 == list.get(1));
         assertTrue(3 == list.get(2));
-
         list.get(6);
     }
 
@@ -59,7 +58,6 @@ public class MyListTest {
         assertTrue(4 == list.get(4));
         assertTrue(2 == list.get(1));
         assertTrue(3 == list.get(2));
-
         list.get(6);
     }
 
