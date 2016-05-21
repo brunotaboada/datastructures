@@ -1,1 +1,1 @@
-# Very basic data structure for a starting point purpose.
+# Very basic data structures for a starting point purpose.
