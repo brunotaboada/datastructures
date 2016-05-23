@@ -20,7 +20,8 @@ public class MyStackArray<E> {
     }
 
     /**
-     * @param e
+     * @param put
+     *            a element on top of the stack.
      */
     public void push(E e) {
         if (size == elements.length) {
@@ -30,7 +31,7 @@ public class MyStackArray<E> {
     }
 
     /**
-     * @return e
+     * @return the topmost element
      */
     @SuppressWarnings("unchecked")
     public E pop() {
