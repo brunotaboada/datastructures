@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 /**
  * @author bruno.taboada
- *
  * @param <E>
  */
 public class MyStackList<E> extends ArrayList<E> {
