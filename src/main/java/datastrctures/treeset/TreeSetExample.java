@@ -45,6 +45,7 @@ public class TreeSetExample {
         } else {
             System.out.println("Data doesn't exist!");
         }
+
         System.out.print("Now the tree set contain: ");
         iterator = tree.iterator();
 
@@ -52,6 +53,7 @@ public class TreeSetExample {
         while (iterator.hasNext()) {
             System.out.print(iterator.next() + " ");
         }
+
         System.out.println();
         System.out.println("Now the size of tree set: " + tree.size());
 
