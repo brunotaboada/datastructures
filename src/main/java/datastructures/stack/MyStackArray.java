@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 /**
  * @author bruno.taboada
- *
  * @param <E>
  */
 public class MyStackArray<E> {
