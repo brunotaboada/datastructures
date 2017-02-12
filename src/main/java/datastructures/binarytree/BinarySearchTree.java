@@ -5,7 +5,7 @@ package datastructures.binarytree;
  */
 public class BinarySearchTree {
 
-    // Refrence for the root of the tree.
+    // Reference for the root of the tree.
     /**
     * 
     */

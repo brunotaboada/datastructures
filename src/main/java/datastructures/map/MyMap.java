@@ -11,45 +11,66 @@ import java.util.Set;
  * @param <V>
  */
 public class MyMap<K, V> {
+
     private int size;
     private int DEFAULT_CAPACITY = 16;
     @SuppressWarnings("unchecked")
-    private MyEntry<K, V>[] values = new MyEntry[DEFAULT_CAPACITY];
+    private Entry<K, V>[] bucket = new Entry[DEFAULT_CAPACITY];
 
     /**
      * @param key
      * @return value
      */
     public V get(K key) {
-        for (int i = 0; i < size; i++) {
-            if (values[i] != null) {
-                if (values[i].getKey().equals(key)) {
-                    return values[i].getValue();
-                }
+        Entry<K, V> ele = bucket[hash(key)];
+        V result = null;
+        while (ele != null) {
+            if (ele.key.equals(key)) {
+                result = ele.val;
+                break;
             }
+            ele = ele.next;
         }
-        return null;
+        return result;
+    }
+
+    private int hash(K key) {
+        return Math.abs(key.hashCode()) & (DEFAULT_CAPACITY - 1);
     }
 
     @SuppressWarnings("javadoc")
-    public void put(K key, V value) {
-        boolean insert = true;
-        for (int i = 0; i < size; i++) {
-            if (values[i].getKey().equals(key)) {
-                values[i].setValue(value);
-                insert = false;
+    public V put(K key, V value) {
+
+        Entry<K, V> entry = new Entry<K, V>(key, value);
+
+        ensureCapa();
+
+        int hash = hash(key);
+
+        if (bucket[hash] == null) {
+            bucket[hash] = entry;
+            size++;
+        } else {
+            Entry<K, V> curr = bucket[hash];
+            while (curr != null) {
+                if (curr.key.equals(key)) {
+                    bucket[hash] = entry;
+                    return value;
+                } else if (curr.next == null) {
+                    curr.next = entry;
+                    return value;
+                }
+                curr = curr.next;
             }
         }
-        if (insert) {
-            ensureCapa();
-            values[size++] = new MyEntry<K, V>(key, value);
-        }
+        return value;
     }
 
     private void ensureCapa() {
-        if (size == values.length) {
-            int newSize = values.length * 2;
-            values = Arrays.copyOf(values, newSize);
+        if (size == bucket.length) {
+            int newSize = bucket.length * 2;
+            DEFAULT_CAPACITY = newSize;
+            bucket = Arrays.copyOf(bucket, newSize);
         }
     }
 
@@ -65,8 +86,8 @@ public class MyMap<K, V> {
      */
     public void remove(K key) {
         for (int i = 0; i < size; i++) {
-            if (values[i].getKey().equals(key)) {
-                values[i] = null;
+            if (bucket[i].key.equals(key)) {
+                bucket[i] = null;
                 size--;
                 condenseArray(i);
             }
@@ -75,7 +96,7 @@ public class MyMap<K, V> {
 
     private void condenseArray(int start) {
         for (int i = start; i < size; i++) {
-            values[i] = values[i + 1];
+            bucket[i] = bucket[i + 1];
         }
     }
 
@@ -85,7 +106,7 @@ public class MyMap<K, V> {
     public Set<K> keySet() {
         Set<K> set = new HashSet<K>();
         for (int i = 0; i < size; i++) {
-            set.add(values[i].getKey());
+            set.add(bucket[i].key);
         }
         return set;
     }
