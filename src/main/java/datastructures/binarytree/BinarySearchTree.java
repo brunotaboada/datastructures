@@ -44,6 +44,27 @@ public class BinarySearchTree {
             }
         }
     }
+    
+    public Node<Integer> findBy(int value){
+    	if(root == null)
+    		throw new RuntimeException("Record was not found.");
+    	return findBy(value,root);
+    }
+    
+    public Node<Integer> findBy(int value, Node<Integer> currenNode){
+    	Node result = null;    	
+    	
+    	if(value == currenNode.value)
+    		return currenNode;
+    	
+    	if(value >= currenNode.value){
+    		result = findBy(value,currenNode.right);
+    	} else{
+    		result = findBy(value,currenNode.left);
+    	}
+    	    	
+    	return result;
+    }
 
     /**
      * @return a node value
