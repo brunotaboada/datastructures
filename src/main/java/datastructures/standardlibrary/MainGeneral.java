@@ -1,4 +1,4 @@
-package datastructures.list;
+package datastructures.standardlibrary;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,24 +25,12 @@ public class MainGeneral {
         Map<Integer, String> map = new HashMap<>();
         LinkedHashMap<Integer, String> lhm = new LinkedHashMap<>();
         TreeMap<Integer, String> treeMap = new TreeMap<>(); // sorted
-
         HashSet<Integer> hset = new HashSet<>();
         LinkedHashSet<Integer> lhs = new LinkedHashSet<>();
         TreeSet<Integer> treeSet = new TreeSet<>(); // sorted
 
         Stack<Integer> stack = new Stack<>();
         Queue<String> que = new LinkedList<>();
-
-        int number = 12345;
-        int res = 0, mod = 0;
-        int middle = number;
-        while (middle > 0) {
-            mod = middle % 10;
-            res = res * 10 + mod;
-            middle = middle / 10;
-        }
-
-        System.out.println(res);
 
     }
 
