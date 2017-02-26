@@ -32,6 +32,9 @@ public class BinarySearchTreeDemo {
 
         System.out.println("Postorder Traversal");
         bst.printPostorder();
+        
+        
+        System.out.println(bst.findBy(93).value);
 
         System.out.println("The minimum value in the BST: " + bst.findMinimum());
         System.out.println("The maximum value in the BST: " + bst.findMaximum());
