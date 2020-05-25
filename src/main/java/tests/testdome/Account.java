@@ -1,4 +1,5 @@
 package tests.testdome;
+
 public class Account {
 	private double balance;
 	private double overdraftLimit;
