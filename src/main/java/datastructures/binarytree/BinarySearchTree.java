@@ -48,10 +48,11 @@ public class BinarySearchTree {
     public Node<Integer> findBy(int value){
     	if(root == null)
     		throw new RuntimeException("Record was not found.");
-    	return findBy(value,root);
+    	return findBy(value, root);
     }
     
-    public Node<Integer> findBy(int value, Node<Integer> currenNode){
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public Node<Integer> findBy(int value, Node<Integer> currenNode){
     	Node result = null;    	
     	
     	if(value == currenNode.value)

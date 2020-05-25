@@ -38,7 +38,6 @@ public class MyMap<K, V> {
         return Math.abs(key.hashCode()) & (DEFAULT_CAPACITY - 1);
     }
 
-    @SuppressWarnings("javadoc")
     public V put(K key, V value) {
 
         Entry<K, V> entry = new Entry<K, V>(key, value);

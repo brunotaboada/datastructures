@@ -2,7 +2,6 @@ package datastructures.binarytree;
 
 /**
  * @author bruno.taboada
- *
  */
 public class BinarySearchTreeDemo {
 
