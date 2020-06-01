@@ -41,7 +41,7 @@ public class TwoSum {
 	}
 
 	public static void main(String[] args) {
-		int[] indices = findTwoSum2(new int[] { 3, 1, 1, 1, 1, 1 }, 10);
+		int[] indices = findTwoSum2(new int[] { 3, 1, 9, 7, 1, 1 }, 10);
 		if (indices != null) {
 			System.out.println(indices[0] + " " + indices[1]);
 		}
