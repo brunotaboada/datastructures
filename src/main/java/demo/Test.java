@@ -5,6 +5,27 @@ import java.util.Collections;
 
 public class Test {
 
+  public void intersection(String[] args) {
+    int[] ar = new int[]{3, 5, 7};
+    int[] ar2 = new int[]{1, 3, 5, 7, 11, 5};
+
+    int a = 0;
+    int b = 0;
+
+    while (a < ar.length && b < ar2.length){
+      if(ar[a] < ar2[b]){
+        a++;
+      } else if (ar2[b] < ar[a]){
+        b++;
+      } else {
+        System.out.println(ar2[b++]+"");
+        a++;
+      }
+    }
+
+    //System.out.println(fib(10));
+  }
+
   void b(int arr[]) {
     Collections.sort(new ArrayList<String>());
   }
