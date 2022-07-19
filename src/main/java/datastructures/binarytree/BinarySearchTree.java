@@ -21,7 +21,7 @@ public class BinarySearchTree {
 	 * @return the same object
 	 */
 	public BinarySearchTree insert(int value) {
-		Node<Integer> node = new Node<Integer>(value);
+		Node<Integer> node = new Node<>(value);
 
 		if (root == null) {
 			root = node;
@@ -36,14 +36,12 @@ public class BinarySearchTree {
 		if (latestRoot.value > node.value) {
 			if (latestRoot.left == null) {
 				latestRoot.left = node;
-				return;
 			} else {
 				insertRec(latestRoot.left, node);
 			}
 		} else {
 			if (latestRoot.right == null) {
 				latestRoot.right = node;
-				return;
 			} else {
 				insertRec(latestRoot.right, node);
 			}
@@ -58,17 +56,14 @@ public class BinarySearchTree {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public Node<Integer> findBy(int value, Node<Integer> currenNode) {
-		Node result = null;
-
+		Node result;
 		if (value == currenNode.value)
 			return currenNode;
-
 		if (value >= currenNode.value) {
 			result = findBy(value, currenNode.right);
 		} else {
 			result = findBy(value, currenNode.left);
 		}
-
 		return result;
 	}
 

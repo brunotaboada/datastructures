@@ -11,7 +11,6 @@ public class Fibonnaci {
 
   public static int fib(int n) {
 
-    // edge cases:
     if (n < 0) {
       throw new IllegalArgumentException("Index was negative. No such thing as a negative index in a series.");
     } else if (n == 0 || n == 1) {
@@ -22,19 +21,19 @@ public class Fibonnaci {
     // so we'll need to track the previous 2 numbers at each step
     int first = 0; // 0th fibonacci
     int second = 1; // 1st fibonacci
-    int current = 0; // Declare and initialize current
+    int third = 0; // Declare and initialize third
 
     for (int i = 1; i < n; i++) {
-      // Iteration 1: current = 2nd fibonacci
-      // Iteration 2: current = 3rd fibonacci
-      // Iteration 3: current = 4th fibonacci
+      // Iteration 1: third = 2nd fibonacci
+      // Iteration 2: third = 3rd fibonacci
+      // Iteration 3: third = 4th fibonacci
       // To get nth fibonacci ... do n-1 iterations.
-      current = second + first;
+      third = second + first;
       first = second;
-      second = current;
+      second = third;
     }
 
-    return current;
+    return third;
   }
 
   public static int fibRecurssion(int n) {
@@ -43,4 +42,5 @@ public class Fibonnaci {
     }
     return fib(n - 1) + fib(n - 2);
   }
+
 }

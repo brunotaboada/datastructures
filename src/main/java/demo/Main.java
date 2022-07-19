@@ -49,14 +49,7 @@ public class Main {
   }
 
   public static void main (String[] args) {
-    // keep this function call here
-    //Scanner s = new Scanner(System.in);
-    //String str1 = s.nextLine();
-    //String str2 = s.nextLine();
-    //System.out.print(StringChallenge(str1, str2));
-
     System.out.println(arrayChallenge(new int[] {5, 5, 1, 5, 1, 11, 11, 11}));
-
   }
 
 
