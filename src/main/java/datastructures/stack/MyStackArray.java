@@ -32,4 +32,5 @@ public class MyStackArray<E> {
         int newSize = elements.length * 2;
         elements = Arrays.copyOf(elements, newSize);
     }
+
 }

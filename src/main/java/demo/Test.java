@@ -27,10 +27,6 @@ public class Test {
     //System.out.println(fib(10));
   }
 
-  void b(int arr[]) {
-    Collections.sort(new ArrayList<String>());
-  }
-
   private static void quickSort (int[] array, int left, int right) {
     int index = partition(array, left, right);
 
@@ -43,7 +39,7 @@ public class Test {
       quickSort(array, index , right);
   }
 
-  private static int partition (int array[], int left, int right) {
+  private static int partition (int[] array, int left, int right) {
     int pivot = array[(left + right) / 2]; //Pick pivot point
     while (left <= right) {
       //Find element on left that should be on right
