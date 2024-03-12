@@ -4,12 +4,11 @@ public class Permutation {
  
     // Function to print all the distinct
     // permutations of str
-    static void printDistinctPermutn(String str,
-                                     String ans)
+    static void printDistinctPermutation(String str, String ans)
     {
  
         // If string is empty
-        if (str.length() == 0) {
+        if (str.isEmpty()) {
  
             // print ans
             System.out.print(ans + " ");
@@ -20,7 +19,7 @@ public class Permutation {
         // stores false by default and make true
         // at the position which alphabet is being
         // used
-        boolean alpha[] = new boolean[26];
+        boolean[] alpha = new boolean[26];
  
         for (int i = 0; i < str.length(); i++) {
  
@@ -36,8 +35,8 @@ public class Permutation {
             // then recursive call will take place.
             // Otherwise, there will be no recursive
             // call
-            if (alpha[ch - 'a'] == false) {
-                printDistinctPermutn(ros, ans + ch);
+            if (!alpha[ch - 'a']) {
+                printDistinctPermutation(ros, ans + ch);
             }
             alpha[ch - 'a'] = true;
         }
@@ -47,6 +46,6 @@ public class Permutation {
     public static void main(String[] args)
     {
         String s = "geek";
-        printDistinctPermutn(s, "");
+        printDistinctPermutation(s, "");
     }
 }
