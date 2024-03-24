@@ -29,7 +29,7 @@ public class Permutation {
             // Rest of the string after excluding
             // the ith character
             String ros = str.substring(0, i) +
-                         str.substring(i + 1);
+                 str.substring(i + 1);
  
             // If the character has not been used
             // then recursive call will take place.
