@@ -11,9 +11,6 @@ import java.util.List;
 public class BinarySearchTree {
 
 	// Reference for the root of the tree.
-	/**
-	* 
-	*/
 	public Node<Integer> root;
 
 	/**
