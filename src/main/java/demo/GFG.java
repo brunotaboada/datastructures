@@ -21,7 +21,7 @@ class GFG {
     }
 
     public static void main(String[] args) {
-        int arr[] = {1, 5, 7, -1, 5};
+        int[] arr = {1, 5, 7, -1, 5};
         int sum = 6;
         System.out.print("Count of pairs is " + getPairsCount(arr, arr.length, sum));
     }
