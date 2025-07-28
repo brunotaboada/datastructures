@@ -22,6 +22,7 @@ class GFG {
         int sum = 6;
         System.out.print("Count of pairs is " + getPairsCount(arr, sum));
     }
+
 }
 
 
