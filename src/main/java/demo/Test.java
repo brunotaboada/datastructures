@@ -1,7 +1,6 @@
 package demo;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class Test {
 
@@ -25,8 +24,38 @@ public class Test {
                 a++;
             }
         }
-
     }
+
+    //Merge Sorted Arrays
+    public void mergeTwoSortedAwways() {
+        int[] ar = new int[]{1,2,3,4,10};
+        int[] ar2 = new int[]{4,5,6,7,8,9};
+        List<Integer> ar3 = new LinkedList<>();
+
+        int pl = 0;
+        int pr = 0;
+
+        while (pl < ar.length && pr < ar2.length){
+            if(ar[pl] < ar2[pr]){
+                ar3.add(ar[pl++]);
+            }
+            else if (ar2[pr] < ar[pl]){
+                ar3.add(ar2[pr++]);
+            } else {
+                ar3.add(ar2[pr++]);
+                pl++;
+                pr++;
+            }
+        }
+        while (pl < ar.length){
+            ar3.add(ar[pl++]);
+        }
+        while (pr < ar2.length){
+            ar3.add(ar2[pr++]);
+        }
+        System.out.println(ar3);
+    }
+
 
     private static void quickSort(int[] array, int left, int right) {
         int index = partition(array, left, right);
@@ -97,7 +126,7 @@ public class Test {
     // Driver code to test above
     public static void main(String args[]) {
         Test ob = new Test();
-        ob.intersection();
+        ob.mergeTwoSortedAwways();
     }
 
 
