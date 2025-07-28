@@ -6,10 +6,10 @@ class BalancedBrackets {
     private final List<Character> leftBrackets = Arrays.asList('(', '[', '{', '<');
     private final List<Character> rightBrackets = Arrays.asList(')', ']', '}', '>');
 
-  public static void main(String[] args) {
-    BalancedBrackets balancedBrackets = new BalancedBrackets();
-    System.out.println(balancedBrackets.balancedBrackets("[()"));
-  }
+    public static void main(String[] args) {
+        BalancedBrackets balancedBrackets = new BalancedBrackets();
+        System.out.println(balancedBrackets.balancedBrackets("[()"));
+    }
 
     public boolean balancedBrackets(String str) {
         Stack<Character> stack = new Stack<>();
