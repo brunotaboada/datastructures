@@ -2,7 +2,7 @@ package demo;
 
 import java.util.*;
 
-public class Test {
+public class ArraysStudies {
 
     //Nice way to get the intersection
     public void intersection() {
@@ -56,7 +56,6 @@ public class Test {
         System.out.println(ar3);
     }
 
-
     private static void quickSort(int[] array, int left, int right) {
         int index = partition(array, left, right);
 
@@ -92,7 +91,7 @@ public class Test {
         return left;
     }
 
-    void ss(int arr[]) {
+    void ss(int[] arr) {
         int n = arr.length;
         for (int i = 1; i < n; i++) {
             int actual = arr[i];
@@ -125,7 +124,7 @@ public class Test {
 
     // Driver code to test above
     public static void main(String args[]) {
-        Test ob = new Test();
+        ArraysStudies ob = new ArraysStudies();
         ob.mergeTwoSortedAwways();
     }
 

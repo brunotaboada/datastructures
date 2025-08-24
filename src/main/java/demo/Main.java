@@ -1,6 +1,5 @@
 package demo;
 
-
 import java.util.*;
 
 public class Main {
@@ -12,20 +11,20 @@ public class Main {
     int high = 0;
     int higher = 0;
 
-    for(int i = 0; i < arr.length; i++){
-      Integer val = counts.get(arr[i]);
-      if(val != null){
-        val++;
-        counts.put(arr[i], val);
-        stack.add(arr[i]);
-        if(high < val){
-          high = val;
-          higher = arr[i];
-        }
-      } else {
-        counts.put(arr[i], 1);
+      for (int j : arr) {
+          Integer val = counts.get(j);
+          if (val != null) {
+              val++;
+              counts.put(j, val);
+              stack.add(j);
+              if (high < val) {
+                  high = val;
+                  higher = j;
+              }
+          } else {
+              counts.put(j, 1);
+          }
       }
-    }
     if(stack.isEmpty()){
       return -1;
     } else {
