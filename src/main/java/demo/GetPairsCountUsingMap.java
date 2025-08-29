@@ -2,7 +2,7 @@ package demo;
 
 import java.util.*;
 
-class GFG {
+class GetPairsCountUsingMap {
 
     static int getPairsCount(int[] arr, int k) {
         HashMap<Integer, Integer> m = new HashMap<>();

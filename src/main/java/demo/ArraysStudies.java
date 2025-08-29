@@ -9,19 +9,19 @@ public class ArraysStudies {
         int[] ar = new int[]{3, 5, 7};
         int[] ar2 = new int[]{1, 3, 5, 7, 11, 5};
 
-        int a = 0;
-        int b = 0;
+        int p1 = 0;
+        int p2 = 0;
 
-        while (a < ar.length && b < ar2.length) {
-            var ar_ele = ar[a];
-            var ar2_ele = ar2[b];
-            if (ar_ele < ar2_ele) {
-                a++;
-            } else if (ar2_ele < ar_ele) {
-                b++;
-            } else {
-                System.out.println(ar2[b++] + "");
-                a++;
+        while (p1 < ar.length && p2 < ar2.length) {
+            var p_ar1 = ar[p1];
+            var p_ar2 = ar2[p2];
+            if (p_ar1 < p_ar2) {
+                p1++;
+            } else if (p_ar2 < p_ar1) {
+                p2++;
+            } else { //they are equal so. Take any one just remember to increment.
+                System.out.println(ar2[p2++] + "");
+                p1++;
             }
         }
     }
@@ -41,10 +41,9 @@ public class ArraysStudies {
             }
             else if (ar2[pr] < ar[pl]){ //add right
                 ar3.add(ar2[pr++]);
-            } else {
+            } else { // values are equal so get from anyone just make sure to increment
                 ar3.add(ar2[pr++]); // add right
                 pl++;
-                pr++;
             }
         }
         while (pl < ar.length){
@@ -125,7 +124,7 @@ public class ArraysStudies {
     // Driver code to test above
     public static void main(String args[]) {
         ArraysStudies ob = new ArraysStudies();
-        ob.mergeTwoSortedAwways();
+        ob.intersection();
     }
 
 
