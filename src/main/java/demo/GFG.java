@@ -12,7 +12,7 @@ class GFG {
             if (m.containsKey(targetElement))
                 count += m.get(targetElement);
             m.computeIfPresent(ele, (key, value) -> value + 1);
-            m.computeIfAbsent(ele, integer -> 1);
+            m.putIfAbsent(ele, 1);
         }
         return count;
     }
