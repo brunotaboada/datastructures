@@ -10,9 +10,6 @@ import java.util.stream.Stream;
  * @author bruno.taboada
  */
 public class FilesExample {
-	/**
-	 * @param args
-	 */
 
 	@SuppressWarnings("unused")
 	private void readWithScanner() {
@@ -28,8 +25,7 @@ public class FilesExample {
 				Scanner lineScanner = new Scanner(line);
 				while (lineScanner.hasNext()) {
 					String token = lineScanner.next();
-					System.out.println(token); // you can do whatever you want
-												// with the tokens
+					System.out.println(token); // you can do whatever you want // with the tokens
 				}
 				lineScanner.close();
 			}

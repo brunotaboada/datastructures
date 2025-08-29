@@ -56,7 +56,7 @@ public class BinarySearchTree {
 		Node result;
 		if (value == currenNode.value)
 			return currenNode;
-		if (value >= currenNode.value) {
+		if (value > currenNode.value) {
 			result = findBy(value, currenNode.right);
 		} else {
 			result = findBy(value, currenNode.left);
