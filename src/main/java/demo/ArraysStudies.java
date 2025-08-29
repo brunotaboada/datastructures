@@ -36,13 +36,13 @@ public class ArraysStudies {
         int pr = 0;
 
         while (pl < ar.length && pr < ar2.length){
-            if(ar[pl] < ar2[pr]){
+            if(ar[pl] < ar2[pr]){ //add left
                 ar3.add(ar[pl++]);
             }
-            else if (ar2[pr] < ar[pl]){
+            else if (ar2[pr] < ar[pl]){ //add right
                 ar3.add(ar2[pr++]);
             } else {
-                ar3.add(ar2[pr++]);
+                ar3.add(ar2[pr++]); // add right
                 pl++;
                 pr++;
             }
